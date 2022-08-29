@@ -5,7 +5,7 @@ from bson import ObjectId
 from bson.json_util import dumps
 
 
-def validateAccess(mongo):
+def validateAccess(mongo): 
     users = mongo.db.Users
     username = request.form['username']
     password = request.form['password']
@@ -13,7 +13,7 @@ def validateAccess(mongo):
 
     login_user = users.find_one({
         'username': username, 
-        "rol": [rol_admin]
+        "rol": [rol_admin] 
     })
 
     if login_user == None:

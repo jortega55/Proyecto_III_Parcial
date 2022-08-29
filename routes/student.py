@@ -35,7 +35,7 @@ def delete(mongo):
     id = ObjectId(request.form["id"])
     users.delete_one({"_id": id})
     found_users = subjects.find_one({"student": id})
-    print(found_users)
+    print(found_users) 
     if found_users != None:
         return jsonify({
             "error": "No es posible eliminar estudiante. Tiene notas registradas"
